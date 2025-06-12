@@ -206,6 +206,8 @@ Enhanced productivity and tech jobs
 <img src= "https://github.com/user-attachments/assets/08ca2f15-90af-415c-8f33-51ccc63a182e" width="150"/>
 <img src= "https://github.com/user-attachments/assets/252abb3e-210e-465a-acd2-66a302768aad" width="150"/>
 <img src= "https://github.com/user-attachments/assets/3bbaf92d-8473-4824-a073-c44cb985d578" width="150"/>
+<img src= "https://github.com/user-attachments/assets/b7ad2e2a-87ac-42b4-8fa3-6b3037ec5855" width="150"/>
+<img src= "https://github.com/user-attachments/assets/ab58c05c-4696-496d-8587-1f1a56e48357" width="150"/>
 </p>
 
 **App Features Showcase:**
