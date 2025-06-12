@@ -1,0 +1,127 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+}
+
+// Load local.properties
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(new FileInputStream(localPropertiesFile))
+}
+def mapsApiKey = localProperties.getProperty("MAPS_API_KEY") ?: ""
+
+android {
+    namespace 'harish.project.maps'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "harish.project.maps"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                MAPS_API_KEY: project.findProperty("MAPS_API_KEY") ?: ""
+        ]
+
+        resValue "string", "google_maps_key", "\"${mapsApiKey}\""
+
+        buildConfigField "String", "GEMINI_API_KEY", "\"${project.findProperty("GEMINI_API_KEY")}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            // Optional: use different API keys or other configs
+            resValue "string", "google_maps_key", "\"${mapsApiKey}\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets'
+            }
+        }
+    }
+    android{
+        buildFeatures {
+            compose = true
+            buildConfig = true
+        }
+    }
+}
+
+// Add these dependencies to your existing build.gradle
+dependencies {
+    // CameraX
+    def camerax_version = '1.4.2'
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-view:${camerax_version}"
+    
+    // Firebase
+    //implementation platform('com.google.firebase:firebase-bom:32.2.0')
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-storage'
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:33.15.0')
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-analytics'
+
+    
+    // ViewModel and LiveData
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.9.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.9.1'
+    
+    // Firebase ML for OCR
+    implementation 'com.google.mlkit:text-recognition:16.0.1'
+    
+    // Glide for image loading
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+implementation 'androidx.appcompat:appcompat:1.7.1'
+implementation 'com.google.android.material:material:1.12.0'
+implementation 'androidx.activity:activity:1.10.1'
+implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    
+    // Google Maps
+    implementation 'com.google.android.gms:play-services-maps:19.2.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+    
+
+    
+    // Gemini AI
+    implementation 'com.google.ai.client.generativeai:generativeai:0.9.0'
+    
+    // Navigation
+    implementation 'com.google.maps:google-maps-services:2.2.0'
+    implementation 'org.slf4j:slf4j-simple:2.0.17'
+    
+    // Charts for analytics
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    
+    // Lottie for animations
+    implementation 'com.airbnb.android:lottie:6.6.6'
+    implementation libs.firebase.auth
+    implementation libs.credentials
+    implementation libs.credentials.play.services.auth
+    implementation libs.googleid
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}

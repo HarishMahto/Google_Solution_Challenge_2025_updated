@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF">
+
+    <TextView
+        android:id="@+id/myVoucherTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My voucher 🎁"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="#111"
+        android:layout_margin="24dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myVoucherRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:clipToPadding="false"/>
+</LinearLayout>
