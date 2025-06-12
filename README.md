@@ -96,7 +96,6 @@ Centralized monitoring, control, and analytics platform for traffic authorities 
 - Firebase (Realtime Database)
 - Google Maps SDK
 - Google Cloud Platform
-- TTS API (Voice Alerts)
 
 </td>
 </tr>
