@@ -203,11 +203,9 @@ Enhanced productivity and tech jobs
 ### 📱 Mobile App Screenshots
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/eae46e8e-348a-4133-9981-9b3e00c0540a" width="150"/>
-<img src="https://github.com/user-attachments/assets/1179c22e-660b-4cab-9286-49c5b8f9a39a" width="150"/>
-<img src="https://github.com/user-attachments/assets/bd008866-348e-418f-a82e-4304115d861d" width="150"/>
-<img src="https://github.com/user-attachments/assets/c5b997b1-4491-4e84-81c1-75b3d1ee1ac5" width="150"/>
-<img src="https://github.com/user-attachments/assets/099d8fd5-71fb-451c-98f3-e076a38d0f1a" width="150"/>
+<img src= "https://github.com/user-attachments/assets/08ca2f15-90af-415c-8f33-51ccc63a182e" width="150"/>
+<img src= "https://github.com/user-attachments/assets/252abb3e-210e-465a-acd2-66a302768aad" width="150"/>
+<img src= "https://github.com/user-attachments/assets/3bbaf92d-8473-4824-a073-c44cb985d578" width="150"/>
 </p>
 
 **App Features Showcase:**
